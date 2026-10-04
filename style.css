@@ -179,12 +179,12 @@ nav {
 }
 
 .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.18);
     transform: translateY(-2px);
 }
 
 .nav-links a.active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.25);
     font-weight: 600;
 }
 
@@ -572,7 +572,8 @@ section > h2 {
 }
 
 .stars {
-    color: #f5a623;
+    /* Dark amber keeps the "gold star" look while clearing WCAG AA (4.6:1) */
+    color: #b45309;
     font-size: 20px;
     letter-spacing: 3px;
 }
@@ -782,11 +783,12 @@ section > h2 {
     bottom: 25px;
     right: 25px;
     background: var(--whatsapp);
-    color: #fff;
+    /* Dark ink instead of white: white on #25D366 is only 1.98:1 */
+    color: #06301b;
     padding: 14px 22px;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     z-index: 999;
@@ -855,7 +857,7 @@ footer {
 }
 
 .footer-social:hover {
-    background: var(--whatsapp);
+    background: rgba(255, 255, 255, 0.22);
 }
 
 .footer-links {
