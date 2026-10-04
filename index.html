@@ -26,365 +26,498 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script>
+        /* Enables scroll-reveal animations. If script.js ever fails to
+           load, the class is dropped again so no content is left hidden. */
+        document.documentElement.classList.add("js");
+        setTimeout(function () {
+            if (!document.documentElement.classList.contains("ready")) {
+                document.documentElement.classList.remove("js");
+            }
+        }, 4000);
+    </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<header>
-    <nav aria-label="Main navigation">
-        <h2 class="logo"><span aria-hidden="true">🍃</span> Fresh Bites</h2>
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+                    <rect width="64" height="64" rx="16" fill="#2e7d32"/>
+                    <circle cx="32" cy="32" r="17" fill="#fbf7f0"/>
+                    <path d="M23 41 Q23 23 41 23 Q41 41 23 41 Z" fill="#2e7d32"/>
+                    <path d="M23 41 Q32 32 41 23" fill="none" stroke="#fbf7f0" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <span class="brand-text">Fresh Bites<em>Mbarara</em></span>
+        </a>
 
-        <button class="menu-toggle" id="mobile-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+        <button class="nav-toggle" id="mobile-menu" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
         </button>
 
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#visit">Visit Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-panel" id="nav-menu">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#visit">Visit</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
 <main id="main">
 
-    <!-- Hero -->
+    <!-- ============ HERO ============ -->
     <section class="hero" id="home">
-        <p class="hero-kicker">Mbarara City &middot; Uganda</p>
-        <h1>Welcome to Mbarara Fresh Bites</h1>
-        <p class="hero-sub">Delicious meals prepared fresh every day.</p>
-        <div class="hero-actions">
-            <button id="order-btn" class="btn btn-solid">Order Now</button>
-            <a href="#menu" class="btn btn-ghost">View Menu</a>
+        <div class="container hero-grid">
+
+            <div class="hero-copy reveal">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Mbarara City &middot; Uganda</p>
+
+                <h1>Real food, made <em>fresh</em> every single day.</h1>
+
+                <p class="lead">
+                    From charcoal-grilled chicken to comforting bean stew — we cook the way you would
+                    at home, with ingredients bought fresh every morning.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#menu">Explore the menu <span aria-hidden="true">→</span></a>
+                    <button class="btn btn-ghost" id="order-btn" type="button">Order on WhatsApp</button>
+                </div>
+
+                <ul class="hero-trust">
+                    <li><strong>4.9</strong><span>★★★★★<br>200+ reviews</span></li>
+                    <li><strong>30<small>min</small></strong><span>Average<br>delivery time</span></li>
+                    <li><strong>7/7</strong><span>Open<br>every day</span></li>
+                </ul>
+            </div>
+
+            <div class="hero-visual reveal" style="--d:.18s">
+                <figure class="hero-shot hero-shot--main">
+                    <img src="images/food-1.jpg" alt="Grilled chicken served with jollof rice" width="736" height="1104" fetchpriority="high">
+                </figure>
+                <figure class="hero-shot hero-shot--sub">
+                    <img src="images/food-4.jpg" alt="Crispy fries topped with roasted beef" width="736" height="920" loading="lazy">
+                </figure>
+
+                <div class="float-card float-card--top">
+                    <span class="float-emoji" aria-hidden="true">🔥</span>
+                    <span><strong>Cooked to order</strong><br>Never sitting under a lamp</span>
+                </div>
+
+                <div class="float-card float-card--bottom">
+                    <span class="float-emoji" aria-hidden="true">🛵</span>
+                    <span><strong>Free delivery</strong><br>On orders over UGX 50,000</span>
+                </div>
+            </div>
+        </div>
+
+        <a class="scroll-hint" href="#about" aria-label="Scroll to About section">
+            <span class="scroll-hint-line" aria-hidden="true"></span>
+            Scroll
+        </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Grilled fresh daily</span><i>✦</i>
+            <span>Dine in &middot; Take away &middot; Delivery</span><i>✦</i>
+            <span>Local ingredients</span><i>✦</i>
+            <span>Open 7 days a week</span><i>✦</i>
+            <span>Free delivery over UGX 50,000</span><i>✦</i>
+            <span>Grilled fresh daily</span><i>✦</i>
+            <span>Dine in &middot; Take away &middot; Delivery</span><i>✦</i>
+            <span>Local ingredients</span><i>✦</i>
+            <span>Open 7 days a week</span><i>✦</i>
+            <span>Free delivery over UGX 50,000</span><i>✦</i>
+        </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+        <div class="container split">
+            <div class="split-visual reveal">
+                <figure class="frame frame--tall">
+                    <img src="images/food-3.jpg" alt="Bowl of spiced pilau rice with beef" width="736" height="1099" loading="lazy">
+                </figure>
+                <figure class="frame frame--small">
+                    <img src="images/food-5.jpg" alt="Rich bowl of bean stew" width="600" height="900" loading="lazy">
+                </figure>
+                <div class="seal" aria-hidden="true">
+                    <strong>100%</strong>
+                    <span>Fresh<br>daily</span>
+                </div>
+            </div>
+
+            <div class="split-copy reveal" style="--d:.12s">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>About us</p>
+                <h2>A small kitchen with <em>big standards</em>.</h2>
+                <p class="lead">
+                    Mbarara Fresh Bites is dedicated to delicious, healthy and affordable meals.
+                    We buy fresh produce every morning, keep the kitchen spotless and treat every
+                    guest like a regular — because most of them soon become one.
+                </p>
+
+                <ul class="ticklist">
+                    <li>Fresh ingredients sourced daily from local markets</li>
+                    <li>Clean, friendly dining space for families</li>
+                    <li>Fast service and delivery anywhere in Mbarara</li>
+                    <li>Fair prices, clearly written in Ugandan Shillings</li>
+                </ul>
+
+                <dl class="stats">
+                    <div><dt class="stat-num" data-count="6" data-suffix="+">6+</dt><dd>Years serving Mbarara</dd></div>
+                    <div><dt class="stat-num" data-count="2000" data-suffix="+">2,000+</dt><dd>Happy customers</dd></div>
+                    <div><dt class="stat-num" data-count="14" data-suffix="">14</dt><dd>Dishes on the menu</dd></div>
+                    <div><dt class="stat-num" data-count="100" data-suffix="%">100%</dt><dd>Fresh, never frozen</dd></div>
+                </dl>
+            </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>
-            Mbarara Fresh Bites is dedicated to providing delicious, healthy, and affordable meals to our customers.
-            We use fresh ingredients and excellent customer service to ensure every meal is enjoyable.
-        </p>
-        <ul class="about-highlights">
-            <li><span aria-hidden="true">✅</span> Fresh ingredients sourced daily</li>
-            <li><span aria-hidden="true">✅</span> Clean, friendly dining space</li>
-            <li><span aria-hidden="true">✅</span> Fast service &amp; city-wide delivery</li>
-            <li><span aria-hidden="true">✅</span> Fair prices in Ugandan Shillings</li>
-        </ul>
-    </section>
+    <!-- ============ SERVICES ============ -->
+    <section class="section services" id="services">
+        <div class="container">
+            <header class="section-head reveal">
+                <p class="eyebrow eyebrow--center"><span class="eyebrow-dot" aria-hidden="true"></span>What we do</p>
+                <h2>Three ways to enjoy <em>Fresh Bites</em>.</h2>
+                <p class="lead">However you like to eat, we have made it quick, easy and affordable.</p>
+            </header>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="service-boxes">
-            <article class="box">
-                <div class="box-icon" aria-hidden="true">🍽️</div>
-                <h3>Dine In</h3>
-                <p>Enjoy meals in a comfortable, clean, and welcoming environment.</p>
-            </article>
-            <article class="box">
-                <div class="box-icon" aria-hidden="true">🛍️</div>
-                <h3>Take Away</h3>
-                <p>Order ahead and collect your food quickly on your way.</p>
-            </article>
-            <article class="box">
-                <div class="box-icon" aria-hidden="true">🚀</div>
-                <h3>Delivery</h3>
-                <p>Get piping hot meals delivered directly to your door anywhere in Mbarara.</p>
-            </article>
+            <div class="cards">
+                <article class="card reveal" style="--d:.05s">
+                    <span class="card-num" aria-hidden="true">01</span>
+                    <span class="card-icon" aria-hidden="true">🍽️</span>
+                    <h3>Dine In</h3>
+                    <p>Settle into a comfortable, clean and welcoming space with table service and no rush.</p>
+                    <span class="card-link">Book a table <span aria-hidden="true">→</span></span>
+                </article>
+
+                <article class="card reveal" style="--d:.14s">
+                    <span class="card-num" aria-hidden="true">02</span>
+                    <span class="card-icon" aria-hidden="true">🛍️</span>
+                    <h3>Take Away</h3>
+                    <p>Order ahead on WhatsApp, skip the queue and collect your food on your way home.</p>
+                    <span class="card-link">Order ahead <span aria-hidden="true">→</span></span>
+                </article>
+
+                <article class="card reveal" style="--d:.23s">
+                    <span class="card-num" aria-hidden="true">03</span>
+                    <span class="card-icon" aria-hidden="true">🛵</span>
+                    <h3>Delivery</h3>
+                    <p>Piping hot meals delivered to your door anywhere in Mbarara — usually within 30 minutes.</p>
+                    <span class="card-link">Get it delivered <span aria-hidden="true">→</span></span>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Menu -->
-    <section class="menu" id="menu">
-        <h2>Our Menu</h2>
-        <p class="section-intro">All prices are in Ugandan Shillings (UGX) and include service. Ask us about today’s special.</p>
+    <!-- ============ MENU ============ -->
+    <section class="section menu" id="menu">
+        <div class="container">
+            <header class="section-head reveal">
+                <p class="eyebrow eyebrow--center"><span class="eyebrow-dot" aria-hidden="true"></span>The menu</p>
+                <h2>Everything we cook, <em>in one place</em>.</h2>
+                <p class="lead">All prices in Ugandan Shillings (UGX). Ask us about today’s special.</p>
+            </header>
 
-        <div class="menu-grid">
-            <div class="menu-category">
-                <h3><span aria-hidden="true">🍛</span> Main Meals</h3>
+            <div class="tabs reveal" role="tablist" aria-label="Menu categories">
+                <button class="tab is-active" role="tab" id="tab-mains" aria-selected="true" aria-controls="panel-mains" type="button">Main Meals</button>
+                <button class="tab" role="tab" id="tab-sides" aria-selected="false" aria-controls="panel-sides" tabindex="-1" type="button">Snacks &amp; Sides</button>
+                <button class="tab" role="tab" id="tab-drinks" aria-selected="false" aria-controls="panel-drinks" tabindex="-1" type="button">Drinks</button>
+            </div>
+
+            <!-- Main meals -->
+            <div class="panel is-active" role="tabpanel" id="panel-mains" aria-labelledby="tab-mains">
                 <ul class="menu-list">
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Grilled Chicken &amp; Jollof Rice</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">15,000</span>
-                        </div>
-                        <p class="menu-desc">Charcoal-grilled chicken leg served with fragrant jollof rice and kachumbari.</p>
+                        <div class="menu-line"><span class="menu-name">Grilled Chicken &amp; Jollof Rice</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">15,000</span></div>
+                        <p class="menu-desc">Charcoal-grilled chicken leg, fragrant jollof rice and kachumbari.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Spiced Pilau Rice</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">12,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Spiced Pilau Rice</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">12,000</span></div>
                         <p class="menu-desc">Slow-cooked pilau rice with tender beef chunks and fresh salad.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Crispy Fries &amp; Roasted Beef</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">14,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Crispy Fries &amp; Roasted Beef</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">14,000</span></div>
                         <p class="menu-desc">Golden crispy chips with juicy roasted beef and a side of sauce.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Special Mixed Stew</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">11,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Special Mixed Stew</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">11,000</span></div>
                         <p class="menu-desc">Home-style mixed stew served with avocado, boiled egg and rice.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Rich Bean Stew &amp; Matooke</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">8,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Rich Bean Stew &amp; Matooke</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">8,000</span></div>
                         <p class="menu-desc">Creamy bean stew with steamed matooke — a comforting local classic.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Beef Chips &amp; Kachumbari</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">13,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Beef Chips &amp; Kachumbari</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">13,000</span></div>
                         <p class="menu-desc">Tender beef strips over crispy fries, topped with fresh kachumbari.</p>
                     </li>
                 </ul>
             </div>
 
-            <div class="menu-category">
-                <h3><span aria-hidden="true">🌯</span> Snacks &amp; Sides</h3>
+            <!-- Snacks & sides -->
+            <div class="panel" role="tabpanel" id="panel-sides" aria-labelledby="tab-sides" hidden>
                 <ul class="menu-list">
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Rolex (Chapati &amp; Egg)</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">4,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Rolex (Chapati &amp; Egg)</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">4,000</span></div>
                         <p class="menu-desc">Freshly made chapati rolled with egg, onions and tomato.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Chicken Wings (6 pcs)</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">10,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Chicken Wings (6 pcs)</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">10,000</span></div>
                         <p class="menu-desc">Crispy on the outside, juicy inside, glazed in our house sauce.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Plain Chips</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">5,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Plain Chips</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">5,000</span></div>
                         <p class="menu-desc">Hot, salted and perfectly crispy — the perfect sidekick.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Fresh Side Salad</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">3,500</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Fresh Side Salad</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">3,500</span></div>
                         <p class="menu-desc">Crunchy garden salad with a light citrus dressing.</p>
                     </li>
                 </ul>
             </div>
 
-            <div class="menu-category">
-                <h3><span aria-hidden="true">🥤</span> Drinks</h3>
+            <!-- Drinks -->
+            <div class="panel" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" hidden>
                 <ul class="menu-list">
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Fresh Passion or Mango Juice</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">3,500</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Fresh Passion or Mango Juice</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">3,500</span></div>
                         <p class="menu-desc">Blended to order — no syrups, no added sugar.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">African Tea or Coffee</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">2,500</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">African Tea or Coffee</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">2,500</span></div>
                         <p class="menu-desc">Rich milk tea or fresh ground coffee, brewed hot.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Soda (500ml)</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">2,500</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Soda (500ml)</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">2,500</span></div>
                         <p class="menu-desc">Chilled and ready to go.</p>
                     </li>
                     <li>
-                        <div class="menu-line">
-                            <span class="menu-name">Mineral Water (500ml)</span>
-                            <span class="menu-dots" aria-hidden="true"></span>
-                            <span class="menu-price">2,000</span>
-                        </div>
+                        <div class="menu-line"><span class="menu-name">Mineral Water (500ml)</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">2,000</span></div>
                         <p class="menu-desc">Clean, cold drinking water.</p>
                     </li>
                 </ul>
             </div>
-        </div>
 
-        <p class="menu-cta">
-            Ready to eat?
-            <a href="https://wa.me/256755460902?text=Hello%20Mbarara%20Fresh%20Bites,%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </p>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery" id="gallery">
-        <h2>Our Food Gallery</h2>
-        <div class="gallery-container">
-            <div class="gallery-item" role="button" tabindex="0" aria-label="Open image: Grilled Chicken and Jollof Rice">
-                <img src="images/food-1.jpg" alt="Grilled chicken served with jollof rice" width="736" height="1104" loading="lazy">
-                <div class="gallery-overlay"><span>Grilled Chicken &amp; Jollof Rice</span></div>
-            </div>
-            <div class="gallery-item" role="button" tabindex="0" aria-label="Open image: Assorted Meat Platter">
-                <img src="images/food-2.jpg" alt="Assorted grilled meat platter" width="736" height="923" loading="lazy">
-                <div class="gallery-overlay"><span>Assorted Meat Platter</span></div>
-            </div>
-            <div class="gallery-item" role="button" tabindex="0" aria-label="Open image: Spiced Pilau Rice">
-                <img src="images/food-3.jpg" alt="Bowl of spiced pilau rice with beef" width="736" height="1099" loading="lazy">
-                <div class="gallery-overlay"><span>Spiced Pilau Rice</span></div>
-            </div>
-            <div class="gallery-item" role="button" tabindex="0" aria-label="Open image: Crispy Fries and Roasted Beef">
-                <img src="images/food-4.jpg" alt="Crispy fries topped with roasted beef" width="736" height="920" loading="lazy">
-                <div class="gallery-overlay"><span>Crispy Fries &amp; Roasted Beef</span></div>
-            </div>
-            <div class="gallery-item" role="button" tabindex="0" aria-label="Open image: Rich Bean Stew">
-                <img src="images/food-5.jpg" alt="Rich bowl of bean stew" width="600" height="900" loading="lazy">
-                <div class="gallery-overlay"><span>Rich Bean Stew</span></div>
-            </div>
-            <div class="gallery-item" role="button" tabindex="0" aria-label="Open image: Special Mixed Stew with Avocado and Egg">
-                <img src="images/food-6.jpg" alt="Mixed stew served with avocado and boiled egg" width="736" height="981" loading="lazy">
-                <div class="gallery-overlay"><span>Special Mixed Stew with Avocado &amp; Egg</span></div>
-            </div>
+            <p class="menu-cta reveal">
+                Hungry already?
+                <a href="https://wa.me/256755460902?text=Hello%20Mbarara%20Fresh%20Bites,%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp <span aria-hidden="true">→</span></a>
+            </p>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="reviews" id="reviews">
-        <h2>What Our Customers Say</h2>
-        <div class="review-grid">
-            <figure class="review-card">
-                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <blockquote>“Ordered delivery to the office and it arrived hot and on time. The grilled chicken is easily the best in Mbarara.”</blockquote>
-                <figcaption>— Aisha K., Kampala Road</figcaption>
-            </figure>
-            <figure class="review-card">
-                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <blockquote>“Clean place, friendly staff and the pilau portion is generous. My family eats here every Sunday.”</blockquote>
-                <figcaption>— Brian T., Nyamitanga</figcaption>
-            </figure>
-            <figure class="review-card">
-                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                <blockquote>“I order on WhatsApp and pick up on my way home. Fast, affordable and always fresh.”</blockquote>
-                <figcaption>— Sarah N., High Street</figcaption>
-            </figure>
+    <!-- ============ GALLERY ============ -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <header class="section-head reveal">
+                <p class="eyebrow eyebrow--center"><span class="eyebrow-dot" aria-hidden="true"></span>Gallery</p>
+                <h2>Plates worth <em>photographing</em>.</h2>
+                <p class="lead">Tap any photo to see it full size.</p>
+            </header>
+
+            <div class="gallery-grid">
+                <div class="g-item g-item--hero reveal" role="button" tabindex="0" aria-label="Open image: Grilled Chicken and Jollof Rice">
+                    <img src="images/food-1.jpg" alt="Grilled chicken served with jollof rice" width="736" height="1104" loading="lazy">
+                    <div class="g-caption"><span>Grilled Chicken &amp; Jollof Rice</span></div>
+                </div>
+                <div class="g-item reveal" style="--d:.06s" role="button" tabindex="0" aria-label="Open image: Assorted Meat Platter">
+                    <img src="images/food-2.jpg" alt="Assorted grilled meat platter" width="736" height="923" loading="lazy">
+                    <div class="g-caption"><span>Assorted Meat Platter</span></div>
+                </div>
+                <div class="g-item reveal" style="--d:.12s" role="button" tabindex="0" aria-label="Open image: Spiced Pilau Rice">
+                    <img src="images/food-3.jpg" alt="Bowl of spiced pilau rice with beef" width="736" height="1099" loading="lazy">
+                    <div class="g-caption"><span>Spiced Pilau Rice</span></div>
+                </div>
+                <div class="g-item g-item--wide reveal" style="--d:.06s" role="button" tabindex="0" aria-label="Open image: Crispy Fries and Roasted Beef">
+                    <img src="images/food-4.jpg" alt="Crispy fries topped with roasted beef" width="736" height="920" loading="lazy">
+                    <div class="g-caption"><span>Crispy Fries &amp; Roasted Beef</span></div>
+                </div>
+                <div class="g-item g-item--wide reveal" style="--d:.1s" role="button" tabindex="0" aria-label="Open image: Rich Bean Stew">
+                    <img src="images/food-5.jpg" alt="Rich bowl of bean stew" width="600" height="900" loading="lazy">
+                    <div class="g-caption"><span>Rich Bean Stew</span></div>
+                </div>
+                <div class="g-item g-item--wide reveal" style="--d:.14s" role="button" tabindex="0" aria-label="Open image: Special Mixed Stew with Avocado and Egg">
+                    <img src="images/food-6.jpg" alt="Mixed stew served with avocado and boiled egg" width="736" height="981" loading="lazy">
+                    <div class="g-caption"><span>Special Mixed Stew with Avocado &amp; Egg</span></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Visit: hours, location, map -->
-    <section class="visit" id="visit">
-        <h2>Visit Us</h2>
-        <div class="visit-grid">
-            <div class="visit-card">
-                <h3><span aria-hidden="true">🕒</span> Opening Hours</h3>
-                <ul class="hours-list">
-                    <li><span>Monday – Friday</span><span>7:00 AM – 10:00 PM</span></li>
-                    <li><span>Saturday</span><span>8:00 AM – 11:00 PM</span></li>
-                    <li><span>Sunday</span><span>9:00 AM – 9:00 PM</span></li>
-                    <li><span>Public Holidays</span><span>10:00 AM – 8:00 PM</span></li>
+    <!-- ============ REVIEWS ============ -->
+    <section class="section reviews" id="reviews">
+        <div class="container">
+            <header class="section-head reveal">
+                <p class="eyebrow eyebrow--center"><span class="eyebrow-dot" aria-hidden="true"></span>Testimonials</p>
+                <h2>What our customers <em>say</em>.</h2>
+            </header>
+
+            <div class="review-grid">
+                <figure class="review reveal" style="--d:.05s">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote>“Ordered delivery to the office and it arrived hot and on time. The grilled chicken is easily the best in Mbarara.”</blockquote>
+                    <figcaption><span class="avatar" aria-hidden="true">AK</span><span><strong>Aisha K.</strong><small>Kampala Road</small></span></figcaption>
+                </figure>
+
+                <figure class="review review--featured reveal" style="--d:.14s">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote>“Clean place, friendly staff and the pilau portion is generous. My family eats here every single Sunday — it has become our ritual.”</blockquote>
+                    <figcaption><span class="avatar" aria-hidden="true">BT</span><span><strong>Brian T.</strong><small>Nyamitanga</small></span></figcaption>
+                </figure>
+
+                <figure class="review reveal" style="--d:.23s">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote>“I order on WhatsApp and pick up on my way home. Fast, affordable and always fresh.”</blockquote>
+                    <figcaption><span class="avatar" aria-hidden="true">SN</span><span><strong>Sarah N.</strong><small>High Street</small></span></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="cta">
+        <div class="container cta-inner reveal">
+            <p class="eyebrow eyebrow--center eyebrow--light"><span class="eyebrow-dot" aria-hidden="true"></span>Ready when you are</p>
+            <h2>Hunger doesn’t wait.<br><em>Neither do we.</em></h2>
+            <p class="lead">Send us a message and your food will be on its way in minutes.</p>
+            <div class="hero-actions hero-actions--center">
+                <a class="btn btn-light" href="https://wa.me/256755460902?text=Hello%20Mbarara%20Fresh%20Bites,%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp <span aria-hidden="true">→</span></a>
+                <a class="btn btn-outline-light" href="tel:+256755460902">Call +256 755 460 902</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="section visit" id="visit">
+        <div class="container">
+            <header class="section-head reveal">
+                <p class="eyebrow eyebrow--center"><span class="eyebrow-dot" aria-hidden="true"></span>Visit us</p>
+                <h2>Find us in the <em>heart of Mbarara</em>.</h2>
+            </header>
+
+            <div class="visit-grid">
+                <div class="panel-card reveal">
+                    <h3><span aria-hidden="true">🕒</span> Opening hours</h3>
+                    <ul class="hours">
+                        <li><span>Monday – Friday</span><span class="hours-dots" aria-hidden="true"></span><b>7:00 – 22:00</b></li>
+                        <li><span>Saturday</span><span class="hours-dots" aria-hidden="true"></span><b>8:00 – 23:00</b></li>
+                        <li><span>Sunday</span><span class="hours-dots" aria-hidden="true"></span><b>9:00 – 21:00</b></li>
+                        <li><span>Public holidays</span><span class="hours-dots" aria-hidden="true"></span><b>10:00 – 20:00</b></li>
+                    </ul>
+                    <p class="open-now" id="open-now"><span class="pulse" aria-hidden="true"></span><span id="open-now-text">Checking opening hours…</span></p>
+                </div>
+
+                <div class="panel-card reveal" style="--d:.12s">
+                    <h3><span aria-hidden="true">📍</span> Get here</h3>
+                    <address>High Street, Mbarara City<br>Ankole Sub-Region, Uganda</address>
+                    <ul class="contact-list">
+                        <li><span aria-hidden="true">📞</span><a href="tel:+256755460902">+256 755 460 902</a></li>
+                        <li><span aria-hidden="true">💬</span><a href="https://wa.me/256755460902" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+                        <li><span aria-hidden="true">🚚</span><span>Delivery anywhere in Mbarara</span></li>
+                    </ul>
+                    <a class="btn btn-dark btn-sm" href="https://www.google.com/maps/search/?api=1&query=Mbarara%2C+Uganda" target="_blank" rel="noopener">Get directions <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+
+            <div class="map-frame reveal">
+                <iframe
+                    src="https://www.google.com/maps?q=Mbarara%2C%20Uganda&output=embed"
+                    title="Map showing Mbarara, Uganda"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-copy reveal">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Contact</p>
+                <h2>Let’s get you <em>fed</em>.</h2>
+                <p class="lead">
+                    Fill in the form and we will open WhatsApp with your message already written —
+                    no account, no waiting for an email reply.
+                </p>
+                <ul class="contact-list">
+                    <li><span aria-hidden="true">📞</span><a href="tel:+256755460902">+256 755 460 902</a></li>
+                    <li><span aria-hidden="true">💬</span><a href="https://wa.me/256755460902" target="_blank" rel="noopener">WhatsApp us</a></li>
+                    <li><span aria-hidden="true">📍</span><span>High Street, Mbarara City</span></li>
+                    <li><span aria-hidden="true">🕘</span><span>Mon – Sun, open daily</span></li>
                 </ul>
             </div>
 
-            <div class="visit-card">
-                <h3><span aria-hidden="true">📍</span> Find Us</h3>
-                <address>
-                    High Street, Mbarara City<br>
-                    Ankole Sub-Region, Uganda
-                </address>
-                <p class="visit-contact">
-                    <a href="tel:+256755460902">+256 755 460 902</a><br>
-                    <a href="https://wa.me/256755460902" target="_blank" rel="noopener">Chat on WhatsApp</a>
-                </p>
-                <a class="btn btn-solid btn-sm" href="https://www.google.com/maps/search/?api=1&query=Mbarara%2C+Uganda" target="_blank" rel="noopener">Get Directions</a>
-            </div>
+            <form class="contact-form reveal" id="contact-form" style="--d:.12s">
+                <div class="field">
+                    <label for="contact-name">Your name</label>
+                    <input type="text" id="contact-name" name="name" placeholder="Jane Doe" autocomplete="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="contact-email">Your email</label>
+                    <input type="email" id="contact-email" name="email" placeholder="jane@example.com" autocomplete="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="contact-message">Your message</label>
+                    <textarea id="contact-message" name="message" placeholder="Tell us what you need…" rows="4" required></textarea>
+                </div>
+
+                <button class="btn btn-primary btn-block" type="submit">Send message <span aria-hidden="true">→</span></button>
+                <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+            </form>
         </div>
-
-        <div class="map-wrap">
-            <iframe
-                src="https://www.google.com/maps?q=Mbarara%2C%20Uganda&output=embed"
-                title="Map showing Mbarara, Uganda"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p class="section-intro">Fill in the form and we will open WhatsApp with your message ready to send — no account needed.</p>
-
-        <form id="contact-form">
-            <div class="field">
-                <label for="contact-name">Your Name</label>
-                <input type="text" id="contact-name" name="name" placeholder="Jane Doe" autocomplete="name" required>
-            </div>
-
-            <div class="field">
-                <label for="contact-email">Your Email</label>
-                <input type="email" id="contact-email" name="email" placeholder="jane@example.com" autocomplete="email" required>
-            </div>
-
-            <div class="field">
-                <label for="contact-message">Your Message</label>
-                <textarea id="contact-message" name="message" placeholder="Tell us what you need..." rows="5" required></textarea>
-            </div>
-
-            <button type="submit">Send Message</button>
-            <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
-        </form>
     </section>
 
 </main>
 
-<footer>
-    <div class="footer-grid">
-        <div class="footer-col">
-            <h3 class="footer-logo">🍃 Fresh Bites</h3>
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-col footer-brand">
+            <a class="brand brand--light" href="#home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+                        <rect width="64" height="64" rx="16" fill="#2e7d32"/>
+                        <circle cx="32" cy="32" r="17" fill="#fbf7f0"/>
+                        <path d="M23 41 Q23 23 41 23 Q41 41 23 41 Z" fill="#2e7d32"/>
+                        <path d="M23 41 Q32 32 41 23" fill="none" stroke="#fbf7f0" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="brand-text">Fresh Bites<em>Mbarara</em></span>
+            </a>
             <p>Fresh, healthy and affordable meals prepared every day in the heart of Mbarara City.</p>
-            <a class="footer-social" href="https://facebook.com/share/1DC7CUQQpG/" target="_blank" rel="noopener">Follow us on Facebook</a>
+            <div class="socials">
+                <a href="https://facebook.com/share/1DC7CUQQpG/" target="_blank" rel="noopener" aria-label="Follow us on Facebook">f</a>
+                <a href="https://wa.me/256755460902" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">💬</a>
+            </div>
         </div>
 
         <div class="footer-col">
-            <h3>Quick Links</h3>
+            <h3>Explore</h3>
             <ul class="footer-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#visit">Visit Us</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
 
@@ -392,38 +525,42 @@
             <h3>Contact</h3>
             <ul class="footer-links">
                 <li><a href="tel:+256755460902">+256 755 460 902</a></li>
-                <li><a href="https://wa.me/256755460902" target="_blank" rel="noopener">WhatsApp Us</a></li>
+                <li><a href="https://wa.me/256755460902" target="_blank" rel="noopener">WhatsApp us</a></li>
                 <li>High Street, Mbarara City</li>
                 <li>Uganda</li>
             </ul>
         </div>
 
         <div class="footer-col">
-            <h3>Opening Hours</h3>
+            <h3>Opening hours</h3>
             <ul class="footer-links">
-                <li>Mon – Fri: 7:00 AM – 10:00 PM</li>
-                <li>Saturday: 8:00 AM – 11:00 PM</li>
-                <li>Sunday: 9:00 AM – 9:00 PM</li>
+                <li>Mon – Fri <b>7:00 – 22:00</b></li>
+                <li>Saturday <b>8:00 – 23:00</b></li>
+                <li>Sunday <b>9:00 – 21:00</b></li>
+                <li>Holidays <b>10:00 – 20:00</b></li>
             </ul>
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 Mbarara Fresh Bites. All Rights Reserved.</p>
+    <div class="container footer-bottom">
+        <p>&copy; <span id="year">2026</span> Mbarara Fresh Bites. All rights reserved.</p>
+        <p>Made with 🍃 in Mbarara</p>
     </div>
 </footer>
 
 <!-- Floating WhatsApp button -->
-<a href="https://wa.me/256755460902" target="_blank" rel="noopener" class="whatsapp" title="Chat on WhatsApp" aria-label="Chat with us on WhatsApp">
-    💬 WhatsApp
+<a href="https://wa.me/256755460902" target="_blank" rel="noopener" class="wa-float" title="Chat on WhatsApp" aria-label="Chat with us on WhatsApp">
+    <span aria-hidden="true">💬</span> Chat with us
 </a>
 
 <!-- Lightbox modal for gallery images -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
     <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
     <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&#10094;</button>
-    <img id="lightbox-img" src="" alt="">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <figure>
+        <img id="lightbox-img" src="" alt="">
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+    </figure>
     <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&#10095;</button>
 </div>
 
